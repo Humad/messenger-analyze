@@ -1,0 +1,22 @@
+[
+  {
+    "model": "messenger_analysis.user",
+    "fields": {
+      "id": "123789"
+    }
+  },
+  {
+    "model": "messenger_analysis.blockedword",
+    "fields": {
+        "word": "the",
+        "users": ["123789"]
+    }
+  },
+  {
+    "model": "messenger_analysis.blockedword",
+    "fields": {
+        "word": "example",
+        "users": ["123789"]
+    }
+  }
+]
