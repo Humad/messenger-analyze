@@ -15,7 +15,7 @@ class BlockedWordType(DjangoObjectType):
 # Create a Query type
 class Query(ObjectType):
     user = graphene.Field(UserType, id=graphene.Int())
-    blockedword = graphene.Field(BlockedWordType, word=graphene.String())
+    blockedword = graphene.List(BlockedWordType, word=graphene.String())
     users = graphene.List(UserType)
     blockedwords = graphene.List(BlockedWordType)
 
@@ -31,7 +31,7 @@ class Query(ObjectType):
         word = kwargs.get('word')
 
         if word is not None:
-            return BlockedWord.objects.get(word=word)
+            return BlockedWord.objects.filter(word=word)
 
         return None
 
